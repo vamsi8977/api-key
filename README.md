@@ -2,6 +2,10 @@
 
 * Create, maintain, and secure APIs at any scale
 
+## Additional Resources
+
+- [Amazon API Key User Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-setup-api-key-with-console.html)
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
@@ -14,7 +18,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 5.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.96.0 |
 
 ## Modules
 
@@ -33,15 +37,13 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_app_id"></a> [app\_id](#input\_app\_id) | provide an app-id | `string` | `"0312"` | no |
-| <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | provide the aws\_region | `string` | `"us-east-1"` | no |
-| <a name="input_burst_limit"></a> [burst\_limit](#input\_burst\_limit) | The API request burst limit, the maximum rate limit over a time ranging from one to a few seconds, depending upon whether the underlying token bucket is at its full capacity | `number` | `5` | no |
-| <a name="input_environment"></a> [environment](#input\_environment) | provide some environment name | `string` | `"develop"` | no |
-| <a name="input_mail"></a> [mail](#input\_mail) | provide an email to send mails | `string` | `"vamsikrishnab1992@gmail.com"` | no |
-| <a name="input_name"></a> [name](#input\_name) | provide an email to send mails | `string` | `"vamsi"` | no |
-| <a name="input_quota_limit"></a> [quota\_limit](#input\_quota\_limit) | Maximum number of requests that can be made in a given time period | `number` | `10000` | no |
-| <a name="input_quota_period"></a> [quota\_period](#input\_quota\_period) | Time period in which the limit applies. Valid values are "DAY", "WEEK" or "MONTH" | `string` | `"DAY"` | no |
-| <a name="input_rate_limit"></a> [rate\_limit](#input\_rate\_limit) | The API request steady-state rate limit | `number` | `10` | no |
+| <a name="input_app_id"></a> [app\_id](#input\_app\_id) | A unique identifier for your application, used in provisioning profiles. | `string` | n/a | yes |
+| <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | The AWS region where resources will be created (e.g., us-east-1, us-west-2). | `string` | n/a | yes |
+| <a name="input_burst_limit"></a> [burst\_limit](#input\_burst\_limit) | The API request burst limit, the maximum rate limit over a time ranging from one to a few seconds, depending upon whether the underlying token bucket is at its full capacity. | `number` | n/a | yes |
+| <a name="input_environment"></a> [environment](#input\_environment) | The name of the environment where resources will be deployed (e.g., dev, staging, prod). | `string` | n/a | yes |
+| <a name="input_quota_limit"></a> [quota\_limit](#input\_quota\_limit) | Maximum number of requests that can be made in a given time period. | `number` | n/a | yes |
+| <a name="input_quota_period"></a> [quota\_period](#input\_quota\_period) | Time period in which the limit applies. Valid values are "DAY", "WEEK" or "MONTH". | `string` | n/a | yes |
+| <a name="input_rate_limit"></a> [rate\_limit](#input\_rate\_limit) | The API request steady-state rate limit. This is the maximum number of requests that can be made per second over a longer time period, such as a minute or an hour. | `number` | n/a | yes |
 
 ## Outputs
 
